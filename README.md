@@ -5,6 +5,19 @@ Just another php http banner grab using *fsockopen* calls
 - php >= 5.6 (7 Recommended) with threadsafe
 - php-pthreads
 
+## Installation
+
+```
+# You'll need composer to install "Common autoload" in the belga scan
+Check this link to install:
+- https://getcomposer.org/download/
+
+After install, you can "get-ready" the scan:
+
+$ composer dump-autoload
+Generating autoload files
+```
+
 ## Usage
 ```
 $ php belga.php

@@ -13,15 +13,15 @@ class Belga extends \Threaded {
 	 * 
 	 * @param string  $host    Host to connect
 	 * @param string  $port    Port
-	 * @param string  $needle  String to search into response
 	 * @param string  $output  File to save needles found
+	 * @param string  $needle  String to search into response
 	 * @param boolean $verbose Show more info
 	 */
 	public function __construct(
 		$host,
 		$port, 
-		$needle = null,
 		$output,
+		$needle = null,
 		$verbose = false
 	) {
 		$this->host = $host;

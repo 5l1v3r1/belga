@@ -10,13 +10,15 @@
  * by @proclnas <proclnas@gmail.com>
  */
 
-require __DIR__ . '/vendor/autoload.php';
-
 set_time_limit(0);
 
 if (!extension_loaded('pthreads')) {
 	exit('[-] Belga requires pthreads. Exiting...' . PHP_EOL);
+} elseif (!is_dir('vendor')) {
+	exit('[-] Use composer first to initialize Belga. Check the Readme to more info...' . PHP_EOL);
 }
+
+require __DIR__ . '/vendor/autoload.php';
 
 use Util\Network;
 use Belga\Belga;
