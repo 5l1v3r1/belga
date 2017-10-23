@@ -3,6 +3,7 @@
 namespace Belga;
 
 class Belga extends \Threaded {
+	const VERSION = '1.0.0';
 	const TIMEOUT = 5;
 	const HEAD_VERB = 'HEAD / HTTP/1.1\r\n';
 	const GET_VERB = 'GET / HTTP/1.1\r\n';
@@ -30,6 +31,37 @@ class Belga extends \Threaded {
 		$this->verbose = $verbose;
 		$this->handle = false;
 		$this->response = '';
+	}
+
+	/**
+	 * Print usage
+	 * 
+	 * @param  array $argv args
+	 * @return string
+	 */
+	public static function usage() {
+		return  sprintf('php belga.php -r ip-range -p port(s) '.
+        '[,-n needle] [,-t thread] [,-o output] [, --verbose] ' . PHP_EOL .
+		'
+		-r           IP RANGE (192.168.0.1:192.168.0.255)
+		-p           PORTS (80 OR 80,8080,...)
+		-n           NEEDLE "Tomcat", "apache", "http", etc...
+		-t           THREADS (Default: 1)
+		-o           OUTPUT (Default: output.txt)
+		--verbose    VERBOSE MODE (Default: false)
+
+		by @proclnas - v%s', self::VERSION);
+	}
+
+	/**
+	 * Get ips from ranges
+	 * 
+	 * @param  string $rangeNotation
+	 * @return \Generator
+	 */
+	public static function parseIps($rangeNotation) {
+		$parsedIps = explode(':', $rangeNotation);
+		return ['ipA' => $parsedIps[0], 'ipB' => $parsedIps[1]];
 	}
 
 	/**
