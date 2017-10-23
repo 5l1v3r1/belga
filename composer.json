@@ -8,11 +8,30 @@
             "email": "proclnas@gmail.com"
         }
     ],
-    "require": {},
+    "config": {
+        "secure-http": false
+    },
+    "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "proclnas/php-utils",
+                "version": "master",
+                "source": {
+                    "type" : "git",
+                    "url" : "http://github.com/proclnas/php-utils.git",
+                    "reference" : "master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "proclnas/php-utils": "dev-master"  
+    },
     "autoload": {
         "psr-4":{
             "Belga\\": "src/",
-            "Util\\": "src/php-utils/"
+            "Util\\": "vendor/proclnas/php-utils/"
         }
     }
 }

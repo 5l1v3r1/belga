@@ -50,7 +50,7 @@ class Belga extends \Threaded {
 		-o           OUTPUT (Default: output.txt)
 		--verbose    VERBOSE MODE (Default: false)
 
-		by @proclnas - v%s', self::VERSION);
+		by @proclnas - v%s' . PHP_EOL, self::VERSION);
 	}
 
 	/**

@@ -4,6 +4,7 @@ Just another php http banner grab using *fsockopen* calls
 ## Requirements
 - php >= 5.6 (7 Recommended) with threadsafe
 - php-pthreads
+- php-utils (Installed automatically when "composer install")
 
 ## Installation
 
@@ -14,7 +15,7 @@ Check this link to install:
 
 After install, you can "get-ready" the scan:
 
-$ composer dump-autoload
+$ composer install
 Generating autoload files
 ```
 
@@ -44,6 +45,8 @@ $ php belga.php -r 192.168.0.0:192.168.0.255 -p 80,8080 -t 25 -n "microsoft"
 ```
 
 ## Todo
+- Add dinamic switch to HEAD/GET verb
+- Add custom payload
 - Create example folders
 - Add cidr notation
 
